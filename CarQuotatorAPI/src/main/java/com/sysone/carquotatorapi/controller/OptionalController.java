@@ -38,7 +38,6 @@ public class OptionalController
 	@PostMapping("/optionals")
 	public Optional postOptional(@RequestBody Optional newOptional)
 	{
-		newOptional.setType(optionalTypeService.findOptionalTypeById(newOptional.getType().getId()));
 		return service.saveOptional(newOptional);
 	}
 	

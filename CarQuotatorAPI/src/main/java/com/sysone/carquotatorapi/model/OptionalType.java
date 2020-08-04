@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class OptionalType
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
 	private int id;
 	
