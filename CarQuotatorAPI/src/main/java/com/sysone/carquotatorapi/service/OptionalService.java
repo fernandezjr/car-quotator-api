@@ -24,6 +24,11 @@ public class OptionalService
 		return repository.findById(id).orElse(null);
 	}
 	
+	public List<Optional> findByTypeId(int typeId)
+	{
+		return repository.findByTypeId(typeId);
+	}
+	
 	public Optional saveOptional(Optional newOptional)
 	{
 		return repository.save(newOptional);

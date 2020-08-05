@@ -12,16 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sysone.carquotatorapi.model.Optional;
 import com.sysone.carquotatorapi.service.OptionalService;
-import com.sysone.carquotatorapi.service.OptionalTypeService;
 
 @RestController
 public class OptionalController 
 {
 	@Autowired
 	private OptionalService service;
-	
-	@Autowired
-	private OptionalTypeService optionalTypeService;
 	
 	@GetMapping("/optionals")
 	public List<Optional> getOptionals()
@@ -33,6 +29,12 @@ public class OptionalController
 	public Optional getOptionalById(@PathVariable int id)
 	{
 		return service.findById(id);
+	}
+	
+	@GetMapping("/optionals/optional-type/{typeId}")
+	public List<Optional> getOptionalsByTypeId(@PathVariable int typeId)
+	{
+		return service.findByTypeId(typeId);
 	}
 	
 	@PostMapping("/optionals")
